@@ -28,6 +28,7 @@ if(isset($_GET["youtubelink"]) && !empty($_GET["youtubelink"]))
 	if(Config::DOWNLOAD_MAX_LENGTH > 0 || $exists)
 	{
 		$dl = new YoutubeDl(['skip-download' => true]);
+		$dl->setBinPath('/usr/bin/youtube-dl');
 		$dl->setDownloadPath(Config::DOWNLOAD_FOLDER);
 	
 		try	{
